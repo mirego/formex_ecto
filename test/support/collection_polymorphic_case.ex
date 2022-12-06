@@ -9,14 +9,15 @@ defmodule Formex.Ecto.CollectionPolymorphicCase do
       alias Formex.Ecto.TestRepo
 
       def insert_articles() do
-        {:ok, art} = TestRepo.insert(%Article{
-          content: "Some content",
-        })
+        {:ok, art} =
+          TestRepo.insert(%Article{
+            content: "Some content"
+          })
 
         art
         |> Ecto.build_assoc(:comments)
         |> Map.put(:content, "I like trains")
-        |> TestRepo.insert
+        |> TestRepo.insert()
       end
 
       def get_article() do

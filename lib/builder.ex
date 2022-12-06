@@ -131,5 +131,4 @@ defimpl Formex.BuilderProtocol, for: Formex.BuilderType.Ecto do
       form.struct_module.__schema__(:embed, name)
     end
   end
-
 end

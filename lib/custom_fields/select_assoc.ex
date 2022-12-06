@@ -137,7 +137,7 @@ defmodule Formex.Ecto.CustomField.SelectAssoc do
   def search(form, name, search) do
     name_id =
       name
-      |> Atom.to_string
+      |> Atom.to_string()
       |> (&Regex.replace(~r/_id$/, &1, "")).()
       |> String.to_atom()
 
@@ -183,7 +183,7 @@ defmodule Formex.Ecto.CustomField.SelectAssoc do
   defp create_field_single(form, name_id, opts) do
     name =
       name_id
-      |> Atom.to_string
+      |> Atom.to_string()
       |> (&Regex.replace(~r/_id$/, &1, "")).()
       |> String.to_atom()
 

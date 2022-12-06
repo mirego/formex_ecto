@@ -20,15 +20,16 @@ defmodule Formex.Ecto.Changeset do
     |> cast_multiple_selects(form)
   end
 
-  @spec create_embedded_changeset(form :: Form.t(), parent_struct :: Form.t(), name :: Atom.t()) :: Form.t()
+  @spec create_embedded_changeset(form :: Form.t(), parent_struct :: Form.t(), name :: Atom.t()) ::
+          Form.t()
   defp create_embedded_changeset(form, parent_form, name) do
-
     # in case of polymorphic association table, the new struct must by created by build_assoc
-    struct = if !form.struct.id and is_assoc(parent_form, name) do
-      Ecto.build_assoc(parent_form.struct, name)
-    else
-      form.struct
-    end
+    struct =
+      if !form.struct.id and is_assoc(parent_form, name) do
+        Ecto.build_assoc(parent_form.struct, name)
+      else
+        form.struct
+      end
 
     do_create_changeset(form, struct)
   end
@@ -125,9 +126,9 @@ defmodule Formex.Ecto.Changeset do
       item.name,
       with: fn substruct, params ->
         substruct =
-          if substruct.id do # existing item
+          if substruct.id do
             substruct
-          else # new item
+          else
             Map.put(substruct, :formex_id, params["formex_id"])
           end
 
