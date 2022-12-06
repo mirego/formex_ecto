@@ -36,7 +36,7 @@ defmodule Formex.Ecto.Mixfile do
     ]
 
     if !System.get_env("FORMEX_DEV") do
-      deps ++ [{:formex, github: "mirego/formex", ref: "c4d31e674720b01f1701f103512ec590570a4557"}]
+      deps ++ [{:formex, github: "mirego/formex"}]
       # deps ++ [{:formex, path: "../formex"}] # for tests with formex debugging
     else
       deps
