@@ -53,7 +53,7 @@ defmodule Formex.Ecto.Polymorphic.CollectionPolymorphicTest do
       "content" => "Some content",
       "comments" => %{
         "0" => %{"id" => Enum.at(article.comments, 0).id |> to_string, "content" => "I like cars"},
-        "1" => %{"formex_id" => "1", "content" => "I like PHP"},
+        "1" => %{"formex_id" => "1", "content" => "I like PHP"}
       }
     }
 
