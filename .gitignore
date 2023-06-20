@@ -3,7 +3,6 @@
 /deps
 erl_crash.dump
 *.ez
-mix.lock
 
 /config/test.secret.exs
 /doc
