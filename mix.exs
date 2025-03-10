@@ -24,7 +24,7 @@ defmodule Formex.Ecto.Mixfile do
 
   defp deps do
     deps = [
-      {:ecto, "~> 3.9.5"},
+      {:ecto, "~> 3.12.5"},
       {:ex_doc, ">= 0.0.0", only: :dev},
       # without a :dev the jakub-zawislak/phoenix-forms won't start. maybe should be removed
       {:ecto_sql, "~> 3.0", only: [:dev, :test]},
