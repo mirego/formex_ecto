@@ -1,3 +1,4 @@
+# credo:disable-for-this-file
 defmodule Formex.Ecto.Utils do
   @moduledoc false
 

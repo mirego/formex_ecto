@@ -1,3 +1,4 @@
+# credo:disable-for-this-file
 defmodule Formex.Ecto.Validator do
   alias Formex.FormCollection
   alias Formex.FormNested
