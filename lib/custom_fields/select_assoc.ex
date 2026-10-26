@@ -281,10 +281,10 @@ defmodule Formex.Ecto.CustomField.SelectAssoc do
   end
 
   defp apply_group_by_assoc(query, [assoc | t]) do
-    if Enum.count(t) > 0 do
-      from(query, preload: [^assoc])
-    else
+    if Enum.empty?(t) do
       query
+    else
+      from(query, preload: [^assoc])
     end
   end
 
